@@ -5,8 +5,8 @@ provides html5-input types as a fallback for common javascript controls
 
 Features
 --------
-* Custom css styling
-* Keyboard and Tab control
+* toggles a html5-input picker control
+* integrates with common javascript controls
 
 Examples
 --------
@@ -57,10 +57,10 @@ Options
     <th>Name</th><th>Description</th>
   </tr>
   <tr>
-    <td>toggle</td><td>method for retrieving the toggle element</td>
+    <td>toggle</td><td>function for retrieving the toggle element</td>
   </tr>
   <tr>
-    <td>picker</td><td>method for retrieving the toggle element</td>
+    <td>picker</td><td>function for retrieving the toggle element</td>
   </tr>
   <tr>
     <td>show</td><td>callback that fires before the nativepicker shows up</td>
