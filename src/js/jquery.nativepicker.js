@@ -159,7 +159,7 @@
         picker.css({
           opacity: 0, 
           position: 'absolute', 
-          zIndex: -1, 
+          zIndex: 1, 
           width: toggle.outerWidth(false), 
           height: toggle.outerHeight(false), 
           display: ''
