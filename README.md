@@ -25,7 +25,7 @@ Using Bootstrap Datepicker
 ```
 $('.datepicker').datepicker().nativepicker({
   type: 'date',
-  update: function(value) {
+  change: function(value) {
     $(this).datepicker('update', value ? new Date(value) : "");
   }, 
   show: function() {

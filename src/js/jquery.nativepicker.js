@@ -215,8 +215,8 @@
         default: 
           toggle.html(value);
       }
-      if (options.update) {
-        value = options.update.call(element, value);
+      if (options.change) {
+        value = options.change.call(element, value);
       }
     }
     
