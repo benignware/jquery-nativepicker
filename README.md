@@ -69,3 +69,17 @@ Options
     <td>change</td><td>callback that fires when the nativepicker value has changed</td>
   </tr>
 </table>
+
+Methods
+-------
+<table>
+  <tr>
+    <th>Name</th><th>Description</th><th>Return</th>
+  </tr>
+  <tr>
+    <td>setPickerValue</td><td>sets the picker value</td><td>void</td>
+  </tr>
+  <tr>
+    <td>getPickerValue</td><td>gets the picker value</td><td>string</td>
+  </tr>
+</table>
