@@ -63,7 +63,7 @@ Options
     <td>toggle</td><td>function for retrieving the toggle element</td>
   </tr>
   <tr>
-    <td>picker</td><td>function for retrieving the toggle element</td>
+    <td>picker</td><td>function for retrieving the native input</td>
   </tr>
   <tr>
     <td>show</td><td>callback that fires before the nativepicker shows up</td>
