@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    
+    <!-- example of jquery checkview component -->
+    
+    <title>TouchClick</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">-->
+    
+    
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/bootstrap-select.css" rel="stylesheet">
+    
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!--<script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.1/js/bootstrap.min.js"></script>-->
+    
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    
+    <script src="../src/js/jquery.nativepicker.js"></script>
+    <script src="js/jquery.touchclick.js"></script>
+		<script>
+		
+			
+			$(document).ready(function() {
+				
+				// init example controls
+				
+				// selectpicker example
+				$('.selectpicker').selectpicker().nativepicker({
+          toggle: function() {
+            return $(this).next().find('.btn');
+          }
+        });
+				
+				
+				// datepicker example
+				var startDate = new Date();
+				$('.datepicker').datepicker({
+				  format: 'dd.mm.yyyy', 
+				  startDate: startDate
+				}).nativepicker({
+				  type: 'date',
+				  update: function(value) {
+				    $(this).datepicker('update', value ? new Date(value) : "");
+				  }, 
+				  show: function() {
+				    var value = $(this).data('datepicker').getDate();
+            $(this).data('nativePicker').setPickerValue(value);
+				  }
+				}).each(function() {
+				  
+				});
+				
+				
+				// native only example
+        $('.nativepicker').nativepicker({
+          toggle: function() {
+            return $($(this).next('.btn')[0]);
+          }
+        });
+        
+				// init touchclick plugin
+				//$("body").touchclick();
+
+				
+			});
+			
+			
+		</script>
+		
+		<style>
+		    
+		    .datepicker {
+		      width: auto
+		    }
+		  
+		</style>
+		
+	</head>
+	<body>
+		
+		<header class="subhead" id="overview">
+		  <div class="container">
+		    <h1>NativePicker</h1>
+		    <p class="lead">provides html5-input types as a fallback for common javascript controls<br/>
+		    	
+		    </p>
+		  </div>
+		</header>
+
+
+		<div class="container">
+    
+
+      <h3>Selectpicker</h3>
+      <select class="selectpicker" name="test">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+      </select> 
+      
+      <h3>Datepicker</h3>
+      <input class="datepicker form-control" value="16.12.2013" placeholder="Select future"/>
+      
+      <!--<input type="date" value="2013-12-14" min="2013-12-14" placeholder="Select future"/>-->
+      
+      <h3>Selectize</h3>
+      <select class="selectize tagging" name="test" multiple="multiple">
+        <option value="Anna">Anna</option>
+        <option value="Bell">Bell</option>
+      </select> 
+      
+      <h3>Native-only select</h3>
+      <select class="nativepicker">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+      <button class="btn btn-primary">Single</button>
+      
+      <select class="nativepicker" multiple="multiple">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+      <button class="btn btn-primary">Multi</button>
+    
+    
+    
+      
+      
+		</div>
+		
+	</body>
+</html>

@@ -6,7 +6,7 @@
     info: function() {}
   };
   
-  var pluginName = 'nativePicker';
+  var pluginName = 'nativepicker';
   
   var defaults = {
     inputSelector: "select, input[type='text]', input[type='date'], textarea", 
