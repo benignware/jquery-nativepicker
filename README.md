@@ -57,6 +57,9 @@ Options
     <th>Name</th><th>Description</th>
   </tr>
   <tr>
+    <td>type</td><td>type of the native input, e.g. 'date'</td>
+  </tr>
+  <tr>
     <td>toggle</td><td>function for retrieving the toggle element</td>
   </tr>
   <tr>
