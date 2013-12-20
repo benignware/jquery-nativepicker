@@ -13,12 +13,21 @@
     toggleSelector: "a, button", 
     type: 'auto', 
     toggleEvent: 'click touchstart focus', 
-    dateFormat: 'dd.mm.yyyy'
   };
   
   
+  // http://stackoverflow.com/questions/6525538/convert-utc-date-time-to-local-date-time-using-javascript
+  function convertUTCDateToLocalDate(date) {
+    var newDate = new Date(date.getTime());
+    var offset = date.getTimezoneOffset() / 60;
+    var hours = date.getHours();
+    newDate.setHours(hours - offset);
+    return newDate;   
+  }
+  
   // http://stackoverflow.com/questions/10830357/javascript-toisostring-ignores-timezone-offset
   function getLocalIsoString(date) {
+    date = convertUTCDateToLocalDate(date);
     var padDigits = function padDigits(number, digits) {
         return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
     };
@@ -68,7 +77,6 @@
             case 'date': 
               var testValue = "not a timestring";
               i.setAttribute('value', testValue);
-              console.log ("html5 support? ", i.value, testValue);
               // html5 date control accepts iso time strings only
               if (!i.value) {
                 result = true;
@@ -130,7 +138,6 @@
               picker.setAttribute('min', options.min);
           }
           $(picker).on('change', function(event) {
-            console.log("PICKER CHANGED", this);
             pickerChanged();
           });
          
@@ -168,7 +175,6 @@
     }
     
     function toggleHandler(event) {
-      console.info("TOGGLE PICKER");
       //if (isTypeSupported(options.type)) {
         event.stopImmediatePropagation();
         event.preventDefault();
@@ -178,10 +184,10 @@
     
     function showPicker() {
       input = getPicker();
-      input.focus();
       if (options.show) {
         options.show.call(element);
       }
+      input.focus();
     }
     
     function getToggleValue() {
@@ -205,7 +211,6 @@
     };
     
     function pickerChanged() {
-      console.log("picker change");
       var value = nativePicker.getPickerValue();
       switch (toggle.prop('tagName').toLowerCase()) {
         case 'input': 

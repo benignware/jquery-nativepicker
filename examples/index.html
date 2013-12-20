@@ -47,16 +47,18 @@
 				  format: 'dd.mm.yyyy', 
 				  startDate: startDate
 				}).nativepicker({
-				  type: 'date',
-				  update: function(value) {
+				  type: 'date', 
+				  min: startDate, 
+				  change: function(value) {
 				    $(this).datepicker('update', value ? new Date(value) : "");
 				  }, 
 				  show: function() {
-				    var value = $(this).data('datepicker').getDate();
+				    var value = $(this).data('datepicker').getUTCDate();
             $(this).data('nativepicker').setPickerValue(value);
 				  }
 				}).each(function() {
 				  
+				}).bind('change', function(event) {
 				});
 				
 				
@@ -107,7 +109,7 @@
       </select> 
       
       <h3>Datepicker</h3>
-      <input class="datepicker form-control" value="16.12.2013" placeholder="Select future"/>
+      <input class="datepicker form-control" value="21.12.2013" placeholder="Select future"/>
       
       <h3>Native-only select</h3>
       <select class="nativepicker">
