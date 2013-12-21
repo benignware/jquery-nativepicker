@@ -86,3 +86,7 @@ Methods
     <td>getPickerValue</td><td>gets the picker value</td><td>string</td>
   </tr>
 </table>
+
+Example Demo
+------------
+http://rawgithub.com/benignware/jquery-nativepicker/master/examples/index.html
