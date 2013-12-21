@@ -11,17 +11,7 @@ Features
 Examples
 --------
 
-
-Using Bootstrap Select
-```
-$('.selectpicker').selectpicker().nativepicker({
-  toggle: function() {
-    return $(this).next().find('.btn');
-  }
-});  
-```
-
-Using Bootstrap Datepicker
+### Using Bootstrap Datepicker
 ```
 $('.datepicker').datepicker().nativepicker({
   type: 'date',
@@ -35,7 +25,17 @@ $('.datepicker').datepicker().nativepicker({
 })
 ```
 
-Native only
+### Using Bootstrap Select
+note that bootstrap-select has built-in support for native-select on mobile. 
+```
+$('.selectpicker').selectpicker().nativepicker({
+  toggle: function() {
+    return $(this).next().find('.btn');
+  }
+});  
+```
+
+### Native only
 ```
 $('.nativepicker').nativepicker({
   toggle: function() {
