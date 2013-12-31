@@ -54,13 +54,10 @@ Options
 -------
 <table>
   <tr>
-    <th>Name</th><th>Description</th>
+    <th>Name</th><th>Description</th><th>Default</th>
   </tr>
   <tr>
-    <td>type</td><td>type of the native input, e.g. 'date'</td>
-  </tr>
-  <tr>
-    <td>toggle</td><td>function for retrieving the toggle element</td>
+    <td>change</td><td>callback that fires when the nativepicker value has changed</td>
   </tr>
   <tr>
     <td>picker</td><td>function for retrieving the native input</td>
@@ -69,7 +66,13 @@ Options
     <td>show</td><td>callback that fires before the nativepicker shows up</td>
   </tr>
   <tr>
-    <td>change</td><td>callback that fires when the nativepicker value has changed</td>
+    <td>toggle</td><td>function for retrieving the toggle element</td>
+  </tr>
+  <tr>
+    <td>toggleEvent</td>event that triggers the native picker<td></td><td>touchstart mousedown</td>
+  </tr>
+  <tr>
+    <td>type</td><td>type of the native input, e.g. 'date'</td><td>auto</td>
   </tr>
 </table>
 
